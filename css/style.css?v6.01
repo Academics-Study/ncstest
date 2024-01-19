@@ -1,0 +1,352 @@
+/* NCS Tech Portal Stylesheet */
+/* Version 5.2 */
+:root {
+  --header-bg: hsla( 3, 63%, 40%, 0%);
+  --logo-fill: #fff;
+  --background-image: url("https://www.ncstechportal.com/img/bg.jpg");
+  --background-attachment: fixed;
+  --background-position: unset;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --card-bg-hover: hsla( 206, 58%, 24%, 100%);
+  --card-outline: hsla( 206, 39%, 41%, 100%);
+  --card-bg: hsla( 206, 58%, 24%, 80%);
+  --card-border-radius: var(--radius-3);
+  --icon-color: #fff;
+  --icon-color-hover: #f5f5f5;
+  --title-color: var(--gray-0);
+  --title-font: var(--font-sans);
+  --url-color: var(--gray-0);
+  --url-color-hover: var(--gray-0);
+  --url-font: var(--font-sans);
+  --url-size: .9rem;
+  --button-outline: hsla( 3, 63%, 40%, 100%);
+  --button-bg-hover: rgb(183, 28, 28);
+  --button-bg: #E52625;
+  --button-text-color: var(--gray-0);
+  --theme-button-bg: transparent;
+  --theme-button-bg-active: #E52625;
+  --theme-button-bg-hover: #911414;
+  --theme-button-outline: none;
+  --theme-button-outline-active: none;
+  --theme-button-outline-hover: none;
+  --theme-button-color: var(--gray-2);
+  --theme-button-color-active: #fff;
+  --theme-button-color-hover: var(--gray-0);
+  --tooltip-bg: #00213b;
+  --tooltip-color: var(--gray-0);
+}
+
+.darkmode {
+  --header-bg: transparent;
+  --logo-fill: hsl(207, 24%, 53%);
+  --background-image: url("https://www.ncstechportal.com/img/bg-dark.jpg");
+  --background-attachment: fixed;
+  --background-position: unset;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --card-bg-hover: hsla( 210, 56%, 25%, 100%);
+  --card-outline: hsla( 206, 39%, 21%, 100%);
+  --card-bg: hsla( 206, 39%, 10%, 50%);
+  --card-border-radius: var(--radius-3);
+  --icon-color: hsl(207, 24%, 53%);
+  --icon-color-hover: hsla(207, 40%, 70%, 1);
+  --title-color: hsl(207, 24%, 53%);
+  --title-font: var(--font-sans);
+  --url-color: var(--gray-5);
+  --url-color-hover: var(--gray-4);
+  --url-font: var(--font-sans);
+  --url-size: .9rem;
+  --button-outline: hsla( 0, 82%, 24%, 100%);
+  --button-bg-hover: rgb(183, 28, 28);
+  --button-bg: hsla( 0, 82%, 24%, 80%);
+  --button-text-color: var(--gray-5);
+  --theme-button-bg: transparent;
+  --theme-button-bg-active: #911414;
+  --theme-button-bg-hover: #911414;
+  --theme-button-outline: none;
+  --theme-button-outline-active: none;
+  --theme-button-outline-hover: none;
+  --theme-button-color: var(--gray-2);
+  --theme-button-color-active: rgb(249, 168, 37);
+  --theme-button-color-hover: var(--gray-0);
+  --tooltip-bg: #00213b;
+  --tooltip-color: var(--gray-0);
+}
+
+.funmode {
+  --header-bg: rgba(255, 255, 255, 0);
+  --logo-fill: #fff;
+  --background-image: url("https://i.redd.it/c3uhsgo1vx541.jpg");
+  --background-attachment: fixed;
+  --background-position: top left;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --card-bg-hover: rgba(255, 255, 255, .5);
+  --card-outline: rgba(255, 255, 255, 0);
+  --card-bg: radial-gradient(at right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .6));
+  --card-backdrop-filter: blur(100px);
+  --card-border-radius: var(--radius-5);
+  --icon-color: #3150BB;
+  --icon-color-hover:#3150BB;
+  --title-color: #fff;
+  --title-font: "Sacramento", cursive;
+  --url-color: #3150BB;
+  --url-color-hover: #3150BB;
+  --url-font: "Sacramento", cursive;
+  --url-size: var(--size-3);
+  --button-outline: transparent;
+  --button-bg-hover: #3150BB;
+  --button-bg: #3150BB;
+  --button-text-color: #fff;
+  --theme-button-bg: transparent;
+  --theme-button-bg-active: #3150BB;
+  --theme-button-bg-hover: rgba(255, 255, 255, 0);
+  --theme-button-outline: none;
+  --theme-button-outline-active: none;
+  --theme-button-outline-hover: none;
+  --theme-button-color: #fff;
+  --theme-button-color-active: #ABCDFB;
+  --theme-button-color-hover: #ABCDFB;
+  --tooltip-bg: rgba(2, 2, 2, 1);
+  --tooltip-color: rgba(255,255,255,1);
+}
+
+* {
+  box-sizing: border-box;
+  transition: 0.3s ease all;
+}
+
+a {
+  text-decoration: none;
+  color: var(--gray-0);
+}
+
+body {
+  background-image: var(--background-image);
+  background-size: var(--background-size);
+  background-repeat: var(--background-repeat);
+  background-attachment: var(--background-attachment);
+  background-position: var(--background-position);
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: var(--size-10);
+}
+
+header {
+  height: var(--size-9);
+  background-color: var(--header-bg);
+  width: 100%;
+  padding: var(--size-3);
+  display: flex;
+  align-items: center;
+}
+header a {
+  width: 100%;
+}
+header a svg {
+  width: 100%;
+  max-width: 14rem;
+  fill: var(--logo-fill);
+}
+
+nav {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  right: -300px;
+  top: 0;
+  background: yellow;
+}
+
+.themeswitchercontainer {
+  display: flex;
+  margin-right: var(--size-9);
+}
+.themeswitchercontainer button {
+  background: var(--theme-button-bg);
+  border: 1px solid var(--theme-button-outline);
+  color: var(--theme-button-color);
+  margin-left: var(--size-2);
+  font-size: var(--size-5);
+  padding: var(--size-1) var(--size-2);
+  border-radius: var(--radius-4);
+  width: var(--size-8);
+  height: var(--size-8);
+}
+.themeswitchercontainer button:hover {
+  cursor: pointer;
+  background: var(--theme-button-bg-hover);
+  border: 1px solid var(--theme-button-outline-hover);
+  color: var(--theme-button-color-hover);
+}
+.themeswitchercontainer .activeTheme {
+  background: var(--theme-button-bg-active);
+  border: 1px solid var(--theme-button-outline-active);
+  color: var(--theme-button-color-active);
+}
+
+.openMenu {
+  right: 0;
+}
+
+main {
+  width: 100%;
+  padding: var(--size-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+main h1 {
+  grid-column: 1/-1;
+  color: var(--title-color);
+  font-family: var(--title-font);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  padding: var(--size-3);
+  bottom: var(--size-3);
+}
+
+@media (min-width: 1024px) {
+  footer {
+    justify-content: flex-end;
+  }
+}
+.button {
+  padding-inline: var(--size-4);
+  padding-block: var(--size-2);
+  border-radius: var(--radius-2);
+  border: var(--border-size-2) solid var(--button-outline);
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button:hover {
+  background: var(--button-bg-hover);
+}
+
+.support-button {
+  margin-inline: var(--size-1);
+}
+
+.card {
+  padding-inline: var(--size-3);
+  padding-block: var(--size-1);
+  border-radius: var(--card-border-radius);
+  border: var(--border-size-2) solid var(--card-outline);
+  background: var(--card-bg);
+  -webkit-backdrop-filter: var(--card-background-filter);
+          backdrop-filter: var(--card-background-filter);
+  color: var(--url-color);
+  margin: var(--size-1);
+  font-family: var(--url-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: 1/1;
+}
+.card:hover {
+  background: var(--card-bg-hover);
+  cursor: pointer;
+  color: var(--url-color-hover);
+}
+.card:hover svg {
+  fill: var(--icon-color-hover);
+}
+.card svg, .card img {
+  width: var(--size-8);
+  margin: var(--size-2) var(--size-3);
+  fill: var(--icon-color);
+}
+
+.card-title {
+  display: block;
+  width: 100%;
+  font-size: var(--url-size);
+}
+
+.card-address {
+  font-size: 7px;
+  line-height: var(--font-lineheight-00);
+  display: none;
+}
+
+[aria-label][class*=cooltipz]::after, [aria-label][data-cooltipz-dir]::after {
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color);
+}
+
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+.animate__animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.animate__tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
